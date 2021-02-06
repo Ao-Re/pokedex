@@ -1,38 +1,651 @@
-.App {
-  text-align: center;
+/* general */
+.drop-shadow {
+  filter: drop-shadow(2px 2px 2px rgba(34, 34, 34, 0.618));
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.drop-shadow-bold {
+  filter: drop-shadow(-1px 5px 2px rgba(34, 34, 34, 0.618));
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.img-adjust {
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.media-adjust {
+  height: 80vh;
+}
+
+/* navbar */
+.navbar-dark-red {
+  background-color: #CC0000;
+}
+
+.navbar-item {
+  color: #FFDE00;
+}
+
+.text-captured {
+  font-size: calc(10px + (13 - 10) * ((100vw - 300px) / (1600 - 300))) !important;
+  max-width: 25px;
+  max-height: 25px;
+  min-width: 25px;
+  min-height: 25px;
+  margin-left: -15px;
+  z-index: 100;
+  position: relative;
+  border: white 2px solid;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* pokedex */
+.scroll-btn {
+  background-color: #CC0000 !important;
+  border-radius: 3em !important;
+  border: none !important;
+  height: 3.5em !important;
+  position: fixed !important;
+  bottom: 20px !important;
+  right: 20px !important;
+}
+
+.pokedex-cont {
+  background-color:lightblue !important;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.5) !important;
+}
+
+.poke-cell {
+  color:black;
+  border-radius: 2em !important;
+}
+
+/* pokemon details page */
+.poke-info-cont {
+  background-color: #6890F0 !important;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.5) !important;
+  width: 100vw;
+  height: 100vh; 
+}
+
+.moves-list {
+  height: 70vh;
+  overflow-y: scroll;
+  background-color: #6890F0;
+  padding-top: 1em;
+}
+
+.catch-button {
+  border-radius: 1em !important;
+}
+
+.catch-button:hover {
+  background-color:rgba(0, 0, 0, 0.1) !important;
+  color: black !important;
+}
+
+/* my pokemon page */
+.my-poke-container {
+  width: 100vw;
+  height: 100vh;
+  background-color:lightblue !important;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.5) !important; 
+}
+
+.my-poke-list {
+  height: 60vh;
+  overflow-y: scroll;
+}
+
+.my-poke-img {
+  height: 10em;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.bt-release-cont {
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.bt-release {
+  height:4em;
+  width: 4em;
+  font-size: larger;
+}
+
+/* not found page */
+.not-found-cont {
+  height: 100vh !important;
+  width: 100vw !important;
+}
+
+/* adjustment */
+@media only screen and (max-width:420px) {
+    .card-column-style {
+      column-count: 2 !important;
+    }
+    .media-adjust {
+      height: 90vh;
+    }
+
+    .moves-list {
+      height: 40vh;
+    }
+    
+    .img-adjust {
+      max-width: 140px;
+    }
+
+    .text-adjust {
+      font-size: smaller !important;
+    }
+
+    .poke-info {
+      height: 35vh;
+    }
+
+    .my-poke-img {
+      height:5em;
+    }
+
+    .bt-release {
+      height: 3em;
+      width: 3em;
+      font-size: smaller !important;
+    }
+
+    .poke-type {
+      width: 4em !important;
+    }
+}
+
+@media only screen and (min-width:421px) and (max-width:780px) {
+  .card-column-style {
+    column-count: 2 !important;
+  }
+
+  .media-adjust {
+    height: 90vh;
+  }
+
+  .moves-list {
+    height: 50vh;
+  }
+  
+  .img-adjust {
+    max-width: 220px;
+  }
+
+  .text-adjust {
+      font-size: smaller !important;
+  }
+
+  .bt-release {
+    height: 3em;
+    width: 3em;
+    font-size: smaller !important;
+  }
+
+  .my-poke-list {
+    height: 40vh;
+    padding-top: 0;
+  }
+
+  .my-poke-img {
+    height:5em;
+  }
+
+  .poke-type {
+    width: 4em !important;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  background: rgba(255,0,0,0.8); 
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
+}
+
+/* css for pokemon type */
+.poke-type {
   color: white;
+  text-shadow: 2px 2px 2px rgba(34, 34, 34, 0.618);
+  border-radius: 2em;
+  width: 5.5em;
+  margin: auto;
+  height: 1.5em;
+  font-weight: bold;
+  align-items: top;
 }
 
-.App-link {
-  color: #61dafb;
+:root {
+  --bug: #A8B820;
+  --bug-dark: #6D7815;
+  --bug-light: #C6D16E;
+
+  --dark: #705848;
+  --dark-dark: #49392F;
+  --dark-light: #A29288;
+
+  --dragon: #7038F8;
+  --dragon-dark: #4924A1;
+  --dragon-light: #A27DFA;
+
+  --electric: #F8D030;
+  --electric-dark: #A1871F;
+  --electric-light: #FAE078;
+
+  --fairy: #EE99AC;
+  --fairy-dark: #9B6470;
+  --fairy-light: #F4BDC9;
+
+  --fighting: #C03028;
+  --fighting-dark: #7D1F1A;
+  --fighting-light: #D67873;
+
+  --fire: #F08030;
+  --fire-dark: #9C531F;
+  --fire-light: #F5AC78;
+
+  --flying: #A890F0;
+  --flying-dark: #6D5E9C;
+  --flying-light: #C6B7F5;
+
+  --ghost: #705898;
+  --ghost-dark: #493963;
+  --ghost-light: #A292BC;
+
+  --grass: #78C850;
+  --grass-dark: #4E8234;
+  --grass-light: #A7DB8D;
+
+  --ground: #E0C068;
+  --ground-dark: #927D44;
+  --ground-light: #EBD69D;
+
+  --ice: #98D8D8;
+  --ice-dark: #638D8D;
+  --ice-light: #BCE6E6;
+
+  --normal: #A8A878;
+  --normal-dark: #6D6D4E;
+  --normal-light: #C6C6A7;
+
+  --poison: #A040A0;
+  --poison-dark: #682A68;
+  --poison-light: #C183C1;
+
+  --psychic: #F85888;
+  --psychic-dark: #A13959;
+  --psychic-light: #FA92B2;
+
+  --rock: #B8A038;
+  --rock-dark: #786824;
+  --rock-light: #D1C17D;
+
+  --steel: #B8B8D0;
+  --steel-dark: #787887;
+  --steel-light: #D1D1E0;
+
+  --water: #6890F0;
+  --water-dark: #445E9C;
+  --water-light: #9DB7F5;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.poke-bug {
+  background-color: var(--bug);
+  border: var(--bug-dark) 1px solid;
+}
+
+.poke-bug::-webkit-scrollbar-thumb {
+  background: var(--bug-dark) !important;
+}
+
+.poke-bug-light {
+  background-color: var(--bug-light) !important;
+  border: var(--bug-dark) 4px solid !important;
+}
+
+.poke-bug-dark {
+  background-color: var(--bug-dark) !important;
+  border: var(--bug-light) 4px solid !important;
+}
+
+.poke-dark {
+  background-color: var(--dark);
+  border: var(--dark-dark) 1px solid;
+}
+
+.poke-dark::-webkit-scrollbar-thumb {
+  background: var(--dark-dark) !important;
+}
+
+.poke-dark-light {
+  background-color: var(--dark-light) !important;
+  border: var(--dark-dark) 4px solid !important;
+}
+
+.poke-dark-dark {
+  background-color: var(--dark-dark) !important;
+  border: var(--dark-light) 4px solid !important;
+}
+
+.poke-dragon {
+  background-color: var(--dragon);
+  border: var(--dragon-dark) 1px solid;
+}
+
+.poke-dragon::-webkit-scrollbar-thumb {
+  background: var(--dragon-dark) !important;
+}
+
+.poke-dragon-light {
+  background-color: var(--dragon-light) !important;
+  border: var(--dragon-dark) 4px solid !important;
+}
+
+.poke-dragon-dark {
+  background-color: var(--dragon-dark) !important;
+  border: var(--dragon-light) 4px solid !important;
+}
+
+.poke-electric {
+  background-color: var(--electric);
+  border: var(--electric-dark) 1px solid;
+}
+
+.poke-electric::-webkit-scrollbar-thumb {
+  background: var(--electric-dark) !important;
+}
+
+.poke-electric-light {
+  background-color: var(--electric-light) !important;
+  border: var(--electric-dark) 4px solid !important;
+}
+
+.poke-electric-dark {
+  background-color: var(--electric-dark) !important;
+  border: var(--electric-light) 4px solid !important;
+}
+
+.poke-fairy {
+  background-color: var(--fairy);
+  border: var(--fairy-dark) 1px solid;
+}
+
+.poke-fairy::-webkit-scrollbar-thumb {
+  background: var(--fairy-dark) !important;
+}
+
+.poke-fairy-light {
+  background-color: var(--fairy-light) !important;
+  border: var(--fairy-dark) 4px solid !important;
+}
+
+.poke-fairy-dark {
+  background-color: var(--fairy-dark) !important;
+  border: var(--fairy-light) 4px solid !important;
+}
+
+.poke-fighting {
+  background-color: var(--fighting);
+  border: var(--fighting-dark) 1px solid;
+}
+
+.poke-fighting::-webkit-scrollbar-thumb {
+  background: var(--fighting-dark) !important;
+}
+
+.poke-fighting-light {
+  background-color: var(--fighting-light) !important;
+  border: var(--fighting-dark) 4px solid !important;
+}
+
+.poke-fighting-dark {
+  background-color: var(--fighting-dark) !important;
+  border: var(--fighting-light) 4px solid !important;
+}
+
+.poke-fire {
+  background-color: var(--fire);
+  border: var(--fire-dark) 1px solid;
+}
+
+.poke-fire::-webkit-scrollbar-thumb {
+  background: var(--fire-dark) !important;
+}
+
+.poke-fire-light {
+  background-color: var(--fire-light) !important;
+  border: var(--fire-dark) 4px solid !important;
+}
+
+.poke-fire-dark {
+  background-color: var(--fire-dark) !important;
+  border: var(--fire-light) 4px solid !important;
+}
+
+.poke-flying {
+  background-color: var(--flying);
+  border: var(--flying-dark) 1px solid;
+}
+
+.poke-flying::-webkit-scrollbar-thumb {
+  background: var(--flying-dark) !important;
+}
+
+.poke-flying-light {
+  background-color: var(--flying-light) !important;
+  border: var(--flying-dark) 4px solid !important;
+}
+
+.poke-flying-dark {
+  background-color: var(--flying-dark) !important;
+  border: var(--flying-light) 4px solid !important;
+}
+
+.poke-ghost {
+  background-color: var(--ghost);
+  border: var(--ghost-dark) 1px solid;
+}
+
+.poke-ghost::-webkit-scrollbar-thumb {
+  background: var(--ghost-dark) !important;
+}
+
+.poke-ghost-light {
+  background-color: var(--ghost-light) !important;
+  border: var(--ghost-dark) 4px solid !important;
+}
+
+.poke-ghost-dark {
+  background-color: var(--ghost-dark) !important;
+  border: var(--ghost-light) 4px solid !important;
+}
+
+.poke-grass {
+  background-color: var(--grass);
+  border: var(--grass-dark) 1px solid;
+}
+
+.poke-grass::-webkit-scrollbar-thumb {
+  background: var(--grass-dark) !important;
+}
+
+.poke-grass-light {
+  background-color: var(--grass-light) !important;
+  border: var(--grass-dark) 4px solid !important;
+}
+
+.poke-grass-dark {
+  background-color: var(--grass-dark) !important;
+  border: var(--grass-light) 4px solid !important;
+}
+
+.poke-ground {
+  background-color: var(--ground);
+  border: var(--ground-dark) 1px solid;
+}
+
+.poke-ground::-webkit-scrollbar-thumb {
+  background: var(--ground-dark) !important;
+}
+
+.poke-ground-light {
+  background-color: var(--ground-light) !important;
+  border: var(--ground-dark) 4px solid !important;
+}
+
+.poke-ground-dark {
+  background-color: var(--ground-dark) !important;
+  border: var(--ground-light) 4px solid !important;
+}
+
+.poke-ice {
+  background-color: var(--ice);
+  border: var(--ice-dark) 1px solid;
+}
+
+.poke-ice::-webkit-scrollbar-thumb {
+  background: var(--ice-dark) !important;
+}
+
+.poke-ice-light {
+  background-color: var(--ice-light) !important;
+  border: var(--ice-dark) 4px solid !important;
+}
+
+.poke-ice-dark {
+  background-color: var(--ice-dark) !important;
+  border: var(--ice-light) 4px solid !important;
+}
+
+.poke-normal {
+  background-color: var(--normal);
+  border: var(--normal-dark) 1px solid;
+}
+
+.poke-normal::-webkit-scrollbar-thumb {
+  background: var(--normal-dark) !important;
+}
+
+.poke-normal-light {
+  background-color: var(--normal-light) !important;
+  border: var(--normal-dark) 4px solid !important;
+}
+
+.poke-normal-dark {
+  background-color: var(--normal-dark) !important;
+  border: var(--normal-light) 4px solid !important;
+}
+
+.poke-poison {
+  background-color: var(--poison);
+  border: var(--poison-dark) 1px solid;
+}
+
+.poke-poison::-webkit-scrollbar-thumb {
+  background: var(--poison-dark) !important;
+}
+
+.poke-poison-light {
+  background-color: var(--poison-light) !important;
+  border: var(--poison-dark) 4px solid !important;
+}
+
+.poke-poison-dark {
+  background-color: var(--poison-dark) !important;
+  border: var(--poison-light) 4px solid !important;
+}
+
+.poke-psychic {
+  background-color: var(--psychic);
+  border: var(--psychic-dark) 1px solid;
+}
+
+.poke-psychic::-webkit-scrollbar-thumb {
+  background: var(--psychic-dark) !important;
+}
+
+.poke-psychic-light {
+  background-color: var(--psychic-light) !important;
+  border: var(--psychic-dark) 4px solid !important;
+}
+
+.poke-psychic-dark {
+  background-color: var(--psychic-dark) !important;
+  border: var(--psychic-light) 4px solid !important;
+}
+
+.poke-rock {
+  background-color: var(--rock);
+  border: var(--rock-dark) 1px solid;
+}
+
+.poke-rock::-webkit-scrollbar-thumb {
+  background: var(--rock-dark) !important;
+}
+
+.poke-rock-light {
+  background-color: var(--rock-light) !important;
+  border: var(--rock-dark) 4px solid !important;
+}
+
+.poke-rock-dark {
+  background-color: var(--rock-dark) !important;
+  border: var(--rock-light) 4px solid !important;
+}
+
+.poke-steel {
+  background-color: var(--steel);
+  border: var(--steel-dark) 1px solid;
+}
+
+.poke-steel::-webkit-scrollbar-thumb {
+  background: var(--steel-dark) !important;
+}
+
+.poke-steel-light {
+  background-color: var(--steel-light) !important;
+  border: var(--steel-dark) 4px solid !important;
+}
+
+.poke-steel-dark {
+  background-color: var(--steel-dark) !important;
+  border: var(--steel-light) 4px solid !important;
+}
+
+.poke-water {
+  background-color: var(--water);
+  border: var(--water-dark) 1px solid;
+}
+
+.poke-water::-webkit-scrollbar-thumb {
+  background: var(--water-dark) !important;
+}
+
+.poke-water-light {
+  background-color: var(--water-light) !important;
+  border: var(--water-dark) 4px solid !important;
+}
+
+.poke-water-dark {
+  background-color: var(--water-dark) !important;
+  border: var(--water-light) 4px solid !important;
 }
