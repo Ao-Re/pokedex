@@ -16,7 +16,7 @@ import chevronUp from '../assets/chevron-arrow-up.svg'
 
 const PokeList = ({pokemons}) => {
     let { url } = useRouteMatch();
-    console.log('url');
+    console.log(url);
     
     const scrollToTop = () => {
         window.scrollTo({top: 0, behavior: 'smooth'})
