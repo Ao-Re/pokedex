@@ -35,7 +35,7 @@ const PokeInfo = () => {
         return <Loader />;
     }
 
-    if(pokeID > 898) {
+    if(pokeID > 898 || !isFinite(pokeID)) {
         return (
             <Jumbotron className={"position-fixed poke-info-cont"}>
                 <h1 className="text-center align-center">No pokemon with that ID found</h1>
