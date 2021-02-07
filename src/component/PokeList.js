@@ -1,6 +1,7 @@
 import React from 'react';
 import {
-    Link
+    Link,
+    useRouteMatch
 } from "react-router-dom";
 
 import Jumbotron from 'react-bootstrap/Jumbotron';
@@ -14,6 +15,7 @@ import Loader from './Loader';
 import chevronUp from '../assets/chevron-arrow-up.svg'
 
 const PokeList = ({pokemons}) => {
+    let { url } = useRouteMatch();
     
     const scrollToTop = () => {
         window.scrollTo({top: 0, behavior: 'smooth'})
@@ -25,7 +27,7 @@ const PokeList = ({pokemons}) => {
         listPokemon = pokemons.map( p => {
             return <>
                     <Col xs={6} md={3} className="my-3" key={p.id}>
-                        <Link to={`/pokedex/pokemon/` + p.id} style={{textDecoration: 'none'}}> 
+                        <Link to={`${url}/pokemon/` + p.id} style={{textDecoration: 'none'}}> 
                             <PokeCell 
                                 pokemon={p}
                             />

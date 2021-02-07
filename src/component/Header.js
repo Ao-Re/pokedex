@@ -4,6 +4,7 @@ import {
     Route,
     Link,
     Redirect,
+    useRouteMatch,
 } from "react-router-dom";
 
 import Navbar from 'react-bootstrap/Navbar';
@@ -28,6 +29,8 @@ const Header = () => {
     const [page, setPage] = useState(1);
     const [isFetching, setIsFetching] = useState(false);
     const [morePage, setMorePage] = useState (true);
+
+    let { path, url } = useRouteMatch();
     
     const fetchPokemons = async () => {
         let offset = (page-1) * 12;
@@ -124,7 +127,7 @@ const Header = () => {
                     </OverlayTrigger>
                 </Link>
                 <Navbar.Collapse className="justify-content-end">
-                    <Link to="/pokedex/my-pokemon">
+                    <Link to={`${url}/my-pokemon`}>
                         <OverlayTrigger
                             placement="bottom"
                             overlay={
@@ -152,10 +155,10 @@ const Header = () => {
                 <Route exact path="/pokedex">
                     <PokeList pokemons={pokemon} />
                 </Route>
-                <Route path={"pokedex/pokemon/:pokeID"}>
+                <Route path={`${path}/pokemon/:pokeID`}>
                     <PokeInfo />
                 </Route>
-                <Route path="pokedex/my-pokemon">
+                <Route path={`${path}/my-pokemon`}>
                     <MyPokemonList />
                 </Route>
                 <Route render={() => <Redirect to={{pathname: "/not-found"}} />}>
