@@ -156,7 +156,7 @@ const Header = () => {
                 <Route exact path="/pokedex/">
                     <PokeList pokemons={pokemon} />
                 </Route>
-                <Route path={`${path}pokemon/:pokeID`}>
+                <Route path={`${path}:pokeID`}>
                     <PokeInfo />
                 </Route>
                 <Route path={`${path}my-pokemon`}>
