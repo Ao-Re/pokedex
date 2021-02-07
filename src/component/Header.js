@@ -64,7 +64,7 @@ const Header = () => {
     
     const infiniteScroll = () => {
         if (window.innerHeight + document.documentElement.scrollTop
-        === (document.documentElement.offsetHeight) && morePage){
+        === (document.documentElement.offsetHeight - 100) && morePage){
 
             console.log('infinite scroll called');
             setIsFetching(true);
@@ -73,13 +73,17 @@ const Header = () => {
 
     useEffect(() => {
         window.addEventListener('scroll', infiniteScroll);
+        window.addEventListener('touchmove', infiniteScroll);
 
         setPage(2);
     
         fetchPokemons();
 
         // eslint-disable-next-line react-hooks/exhaustive-deps
-        return () => window.removeEventListener('scroll', infiniteScroll);
+        return () => {
+            window.removeEventListener('scroll', infiniteScroll);
+            window.removeEventListener('touchmove', infiniteScroll);
+        }
     }, [])
 
     useEffect(() => {
