@@ -63,12 +63,11 @@ const Header = () => {
     
     const infiniteScroll = () => {
         if ((window.innerHeight + window.scrollY + 100) >= document.body.offsetHeight  && morePage){
-            console.log("inner height + scrollY = " + (window.innerHeight + window.scrollY));
-            console.log("body offset height = " + document.body.offsetHeight);
             setIsFetching(true);
         }
     }
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         window.addEventListener('scroll', infiniteScroll);
         window.addEventListener('touchmove', infiniteScroll);
@@ -77,13 +76,13 @@ const Header = () => {
     
         fetchPokemons();
 
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         return () => {
             window.removeEventListener('scroll', infiniteScroll);
             window.removeEventListener('touchmove', infiniteScroll);
         }
     }, [])
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         if (!isFetching) return;
         if(isFetching){
@@ -91,7 +90,6 @@ const Header = () => {
             newPage++;
             setPage(newPage);
 
-            // eslint-disable-next-line react-hooks/exhaustive-deps
             fetchPokemons();
         }
     }, [isFetching]);
