@@ -63,7 +63,7 @@ const Header = () => {
     }
     
     const infiniteScroll = () => {
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight  && morePage){
+        if ((window.innerHeight + window.scrollY + 100) >= document.body.offsetHeight  && morePage){
             console.log("inner height + scrollY = " + (window.innerHeight + window.scrollY));
             console.log("body offset height = " + document.body.offsetHeight);
             setIsFetching(true);
