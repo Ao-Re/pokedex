@@ -157,7 +157,8 @@
     }
 
     .poke-type {
-      width: 4em !important;
+      width: 2em !important;
+      font-size: small !important;
     }
 }
 
@@ -198,7 +199,8 @@
   }
 
   .poke-type {
-    width: 4em !important;
+    width: 3em !important;
+    font-size: small !important;
   }
 }
 
