@@ -27,7 +27,7 @@ const MyPokemon = ({pokemon}) => {
             </Col>
             <Col xs={9} sm={8}>
                 <Row>
-                    <h3 className="text-adjust display-4 font-weight-bold">{pokemon.nick}</h3>
+                    <h3 className="text-adjust font-weight-bold">{pokemon.nick}</h3>
                 </Row>
                 <Row>
                     <div className="text-adjust font-italic">{pokemon.name}</div>

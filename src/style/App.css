@@ -161,8 +161,8 @@
       font-size: smaller !important;
     }
 
-    .poke-type {
-      width: 2em !important;
+    .poke-type-adjust {
+      width: 3em !important;
       font-size: 0.7rem !important;
     }
 }
@@ -185,7 +185,7 @@
   }
 
   .text-adjust {
-      font-size: 0.7 !important;
+      font-size: 0.7rem !important;
   }
 
   .bt-release {
@@ -203,8 +203,8 @@
     height:5em;
   }
 
-  .poke-type {
-    width: 3em !important;
+  .poke-type-adjust {
+    width: 4em !important;
     font-size: 0.7rem !important;
   }
 }

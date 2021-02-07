@@ -88,7 +88,7 @@ const PokeDetails = ({pokemon}) => {
                 <Col xs={12} sm={5}>
                     <Container className="poke-info sticky-top">
                         <h4 className="text-adjust mark">{pokeID}</h4>
-                        <h2 className="text-adjust text-center text-uppercase display-4 font-weight-bold">{pokemon.name}</h2>
+                        <h2 className="text-adjust text-center text-uppercase font-weight-bold">{pokemon.name}</h2>
                         <Row>
                             {types? types.map((t => <Col className="text-center"><h4 className={"text-adjust poke-type align-middle poke-" + t.type.name}>{t.type.name}</h4></Col>)) : null }
                         </Row>
