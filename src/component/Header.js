@@ -4,7 +4,6 @@ import {
     Route,
     Link,
     Redirect,
-    useRouteMatch,
 } from "react-router-dom";
 
 import Navbar from 'react-bootstrap/Navbar';
@@ -29,8 +28,6 @@ const Header = () => {
     const [page, setPage] = useState(1);
     const [isFetching, setIsFetching] = useState(false);
     const [morePage, setMorePage] = useState (true);
-
-    let { path, url } = useRouteMatch();
     
     const fetchPokemons = async () => {
         let offset = (page-1) * 12;
@@ -156,7 +153,7 @@ const Header = () => {
                 <Route exact path="/pokedex/">
                     <PokeList pokemons={pokemon} />
                 </Route>
-                <Route path={`${path}:pokeID`}>
+                <Route path={`/pokedex/:pokeID`}>
                     <PokeInfo />
                 </Route>
                 <Route path={`${path}my-pokemon`}>
