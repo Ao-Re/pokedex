@@ -132,11 +132,11 @@ const Header = () => {
                 <Route exact path="/pokedex/">
                     <PokeList pokemons={pokemon} />
                 </Route>
-                <Route path="/pokedex/:pokeID">
-                    <PokeInfo />
-                </Route>
                 <Route path="/pokedex/my-pokemon">
                     <MyPokemonList />
+                </Route>
+                <Route path="/pokedex/:pokeID">
+                    <PokeInfo />
                 </Route>
                 <Route render={() => <Redirect to={{pathname: "/not-found"}} />}>
                     <NotFound />
