@@ -100,7 +100,7 @@ const PokeDetails = ({pokemon}) => {
                     <h1 className="sticky-top text-adjust">Moves</h1>
                     <Container className={"moves-list poke-" + types[0].type.name}>
                         <CardColumns className={"card-column-style"}>
-                            {moves? (moves.map((m => <Card className={"card-style poke-" + types[0].type.name + "-light"}> <Card.Body className="text-capitalize text-adjust font-weight-bold"> {(m.move.name).replace('-', ' ')} </Card.Body> </Card>))): null}
+                            {moves? (moves.map((m => <Card className={"card-style poke-" + types[0].type.name + "-light"}> <Card.Body className="text-capitalize text-adjust font-weight-bold py-2"> {(m.move.name).replace('-', ' ')} </Card.Body> </Card>))): null}
                         </CardColumns>
                     </Container>
                 </Col>

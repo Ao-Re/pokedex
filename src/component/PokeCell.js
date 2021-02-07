@@ -22,7 +22,7 @@ const PokeCell = ({pokemon}) => {
                 <Card.Footer>
                     <Row>
                         {pokemon.types.map((type) => 
-                            <Col className="text-center" >
+                            <Col className="text-center col-adjust" >
                                 <div className={"text-adjust align-middle poke-type poke-" + type.type.name}>{type.type.name}</div>
                             </Col>
                         )}
