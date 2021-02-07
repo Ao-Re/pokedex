@@ -7,7 +7,7 @@ const NotFound = () => {
     return (
         <Jumbotron className="text-center not-found-cont position-fixed">
             <h1 className="display-2">Page not found.</h1>
-            <Link to="/pokedex" >🡨 go back to home</Link>
+            <Link to="/pokedex/" >🡨 go back to home</Link>
         </Jumbotron>
     )
 }
