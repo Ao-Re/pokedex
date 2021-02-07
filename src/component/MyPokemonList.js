@@ -35,7 +35,7 @@ const MyPokemonList = () => {
 
     return (
         <Jumbotron className="position-fixed my-poke-container py-5">
-            <h1 className="sticky-top text-center text-adjust font-weight-thin mark">My Pokemon</h1>
+            <h1 className="sticky-top text-center font-weight-thin mark">My Pokemon</h1>
             <Container className="my-poke-list">
                 {myPokeList}
             </Container>

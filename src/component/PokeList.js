@@ -42,7 +42,7 @@ const PokeList = ({pokemons}) => {
     return (
         <>
         <Jumbotron className="pokedex-cont">
-            <h1 className="text-center font-weight-light text-adjust mark">Pokemon List</h1>
+            <h1 className="text-center font-weight-light mark">Pokemon List</h1>
             <Row>
                 {listPokemon}
             </Row>
