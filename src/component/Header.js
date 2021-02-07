@@ -64,9 +64,9 @@ const Header = () => {
     
     const infiniteScroll = () => {
         if (window.innerHeight + document.documentElement.scrollTop
-        === (document.documentElement.offsetHeight - 100) && morePage){
+        === (document.documentElement.offsetHeight) && morePage){
 
-            console.log('infinite scroll called');
+            console.log(document.documentElement.offsetHeight);
             setIsFetching(true);
         }
     }
