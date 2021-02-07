@@ -64,7 +64,7 @@ const Header = () => {
     
     const infiniteScroll = () => {
         if (window.innerHeight + document.documentElement.scrollTop
-        === document.documentElement.offsetHeight && morePage){
+        === (document.documentElement.offsetHeight - 10) && morePage){
          
             setIsFetching(true);
         }
@@ -102,7 +102,7 @@ const Header = () => {
     return(
         <>
             <Navbar variant="dark-red drop-shadow-bold" sticky="top">
-                <Link to="/">
+                <Link to="/pokedex">
                     <OverlayTrigger
                         placement="bottom"
                         overlay={
@@ -124,7 +124,7 @@ const Header = () => {
                     </OverlayTrigger>
                 </Link>
                 <Navbar.Collapse className="justify-content-end">
-                    <Link to="/my-pokemon">
+                    <Link to="/pokedex/my-pokemon">
                         <OverlayTrigger
                             placement="bottom"
                             overlay={
@@ -149,13 +149,13 @@ const Header = () => {
             </Navbar>
 
             <Switch>
-                <Route exact path="/">
+                <Route exact path="/pokedex">
                     <PokeList pokemons={pokemon} />
                 </Route>
-                <Route path={"/pokemon/:pokeID"}>
+                <Route path={"pokedex/pokemon/:pokeID"}>
                     <PokeInfo />
                 </Route>
-                <Route path="/my-pokemon">
+                <Route path="pokedex/my-pokemon">
                     <MyPokemonList />
                 </Route>
                 <Route render={() => <Redirect to={{pathname: "/not-found"}} />}>
