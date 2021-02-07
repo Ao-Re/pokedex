@@ -19,7 +19,7 @@ import bag from '../assets/Bag.svg';
 
 const apiURL = 'https://pokeapi.co/api/v2/pokemon/?limit=12&offset=';
 
-const Header = () => {
+const Main = () => {
     const { capturedPokemons } = useContext(PokeContext);
     const [pokemon, setPokemon] = useState([]);
     const [nCaptured, setNCaptured] = useState(0);
@@ -146,4 +146,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default Main;

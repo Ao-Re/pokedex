@@ -1,14 +1,14 @@
 import React from 'react';
 
 import { PokeProvider } from './PokeContext';
-import Header from './Header';
+import Main from './Main';
 
 import '../style/App.css';
 
 function App() {
   return (
     <PokeProvider>
-      <Header />
+      <Main />
     </PokeProvider>
     
   );
