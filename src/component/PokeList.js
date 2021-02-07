@@ -27,7 +27,7 @@ const PokeList = ({pokemons}) => {
         listPokemon = pokemons.map( p => {
             return <>
                     <Col xs={6} md={3} className="my-3" key={p.id}>
-                        <Link to={`${url}` + p.id} style={{textDecoration: 'none'}}> 
+                        <Link to={`${url}/pokemon` + p.id} style={{textDecoration: 'none'}}> 
                             <PokeCell 
                                 pokemon={p}
                             />

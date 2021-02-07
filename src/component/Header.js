@@ -100,7 +100,7 @@ const Header = () => {
     return(
         <>
             <Navbar variant="dark-red drop-shadow-bold" sticky="top">
-                <Link to="/pokedex/">
+                <Link to="/">
                     <Navbar.Brand>
                         <img 
                             alt=""
@@ -113,7 +113,7 @@ const Header = () => {
                     </Navbar.Brand>
                 </Link>
                 <Navbar.Collapse className="justify-content-end">
-                    <Link to="/pokedex/my-pokemon">
+                    <Link to="/my-pokemon">
                         <Navbar.Brand>
                             <img 
                                 alt=""
@@ -129,13 +129,13 @@ const Header = () => {
             </Navbar>
 
             <Switch>
-                <Route exact path="/pokedex/">
+                <Route exact path="/">
                     <PokeList pokemons={pokemon} />
                 </Route>
-                <Route path="/pokedex/my-pokemon">
+                <Route path="/my-pokemon">
                     <MyPokemonList />
                 </Route>
-                <Route path="/pokedex/:pokeID">
+                <Route path="/pokemon/:pokeID">
                     <PokeInfo />
                 </Route>
                 <Route render={() => <Redirect to={{pathname: "/not-found"}} />}>
