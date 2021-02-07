@@ -113,7 +113,7 @@ const Header = () => {
                     </Navbar.Brand>
                 </Link>
                 <Navbar.Collapse className="justify-content-end">
-                    <Link to="/my-pokemon">
+                    <Link to="/pokedex/my-pokemon">
                         <Navbar.Brand>
                             <img 
                                 alt=""
@@ -135,7 +135,7 @@ const Header = () => {
                 <Route path="/pokedex/:pokeID">
                     <PokeInfo />
                 </Route>
-                <Route path="/my-pokemon">
+                <Route path="/pokedex/my-pokemon">
                     <MyPokemonList />
                 </Route>
                 <Route render={() => <Redirect to={{pathname: "/not-found"}} />}>
