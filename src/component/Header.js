@@ -8,7 +8,6 @@ import {
 
 import Navbar from 'react-bootstrap/Navbar';
 import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
-import Tooltip from 'react-bootstrap/Tooltip';
 import Badge from 'react-bootstrap/Badge';
 
 import PokeList from './PokeList';
@@ -107,47 +106,29 @@ const Header = () => {
         <>
             <Navbar variant="dark-red drop-shadow-bold" sticky="top">
                 <Link to="/pokedex/">
-                    <OverlayTrigger
-                        placement="bottom"
-                        overlay={
-                            <Tooltip id="my-pokemon">
-                                Open Pokedex
-                            </Tooltip>
-                        }
-                    >
-                        <Navbar.Brand>
-                            <img 
-                                alt=""
-                                src={logo}
-                                width="45"
-                                height="45"
-                                className="d-inline-block align-top drop-shadow"
-                            />{''}
-                            <h2 className="d-inline-block pl-2 navbar-item">Pokemon</h2>
-                        </Navbar.Brand>
-                    </OverlayTrigger>
+                    <Navbar.Brand>
+                        <img 
+                            alt=""
+                            src={logo}
+                            width="45"
+                            height="45"
+                            className="d-inline-block align-top drop-shadow"
+                        />{''}
+                        <h2 className="d-inline-block pl-2 navbar-item">Pokemon</h2>
+                    </Navbar.Brand>
                 </Link>
                 <Navbar.Collapse className="justify-content-end">
                     <Link to="/my-pokemon">
-                        <OverlayTrigger
-                            placement="bottom"
-                            overlay={
-                                <Tooltip id="my-pokemon">
-                                    Check My Pokemon
-                                </Tooltip>
-                            }
-                        >
-                            <Navbar.Brand>
-                                <img 
-                                    alt=""
-                                    src={bag}
-                                    width="50"
-                                    height="50"
-                                    className="drop-shadow"
-                                />
-                                <Badge variant="primary" className="align-top text-captured" pill><span className="align-middle">{nCaptured}</span></Badge>
-                            </Navbar.Brand>
-                        </OverlayTrigger>
+                        <Navbar.Brand>
+                            <img 
+                                alt=""
+                                src={bag}
+                                width="50"
+                                height="50"
+                                className="drop-shadow"
+                            />
+                            <Badge variant="primary" className="align-top text-captured" pill><span className="align-middle">{nCaptured}</span></Badge>
+                        </Navbar.Brand>
                     </Link>
                 </Navbar.Collapse>
             </Navbar>
