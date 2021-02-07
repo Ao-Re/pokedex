@@ -9,7 +9,6 @@ import MyPokemon from './MyPokemon';
 
 const MyPokemonList = () => {
     const { capturedPokemons } = useContext(PokeContext);
-    console.log(capturedPokemons.length);
 
     let myPokeList;
     if (!capturedPokemons || capturedPokemons.length === 0) {

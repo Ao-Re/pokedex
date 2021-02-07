@@ -128,7 +128,7 @@ const Header = () => {
                     </OverlayTrigger>
                 </Link>
                 <Navbar.Collapse className="justify-content-end">
-                    <Link to="/pokedex/my-pokemon">
+                    <Link to="/my-pokemon">
                         <OverlayTrigger
                             placement="bottom"
                             overlay={
@@ -159,7 +159,7 @@ const Header = () => {
                 <Route path="/pokedex/:pokeID">
                     <PokeInfo />
                 </Route>
-                <Route path="/pokedex/my-pokemon">
+                <Route path="/my-pokemon">
                     <MyPokemonList />
                 </Route>
                 <Route render={() => <Redirect to={{pathname: "/not-found"}} />}>
