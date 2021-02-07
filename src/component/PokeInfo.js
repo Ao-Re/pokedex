@@ -28,7 +28,6 @@ const PokeInfo = () => {
             await setIsFetching(false);
         }
         
-        // eslint-disable-next-line react-hooks/exhaustive-deps
         fetchPokemon(pokeID);
     }, [])
 

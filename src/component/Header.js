@@ -7,7 +7,6 @@ import {
 } from "react-router-dom";
 
 import Navbar from 'react-bootstrap/Navbar';
-import OverlayTrigger from 'react-bootstrap/OverlayTrigger';
 import Badge from 'react-bootstrap/Badge';
 
 import PokeList from './PokeList';
@@ -67,7 +66,6 @@ const Header = () => {
         }
     }
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         window.addEventListener('scroll', infiniteScroll);
         window.addEventListener('touchmove', infiniteScroll);
@@ -82,7 +80,6 @@ const Header = () => {
         }
     }, [])
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     useEffect(() => {
         if (!isFetching) return;
         if(isFetching){
