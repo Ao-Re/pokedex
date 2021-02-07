@@ -129,7 +129,7 @@ const Header = () => {
                     </OverlayTrigger>
                 </Link>
                 <Navbar.Collapse className="justify-content-end">
-                    <Link to={`/pokedex/my-pokemon`}>
+                    <Link to="/pokedex/my-pokemon">
                         <OverlayTrigger
                             placement="bottom"
                             overlay={
